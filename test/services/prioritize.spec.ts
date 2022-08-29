@@ -19,7 +19,7 @@ suite('Testing prioritize services:', () => {
       const { totalMoney, usedTransaction } = prioritize(
         sampleTransactions,
         timeLimit,
-        LatenciesTable
+        LatenciesTable,
       );
       expect(usedTransaction).to.be.an('array');
       expect(_calculateTotalTime(usedTransaction)).lessThanOrEqual(timeLimit);

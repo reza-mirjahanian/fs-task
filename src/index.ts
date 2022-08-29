@@ -1,5 +1,6 @@
 import DataRepo from './repository/dataRepo';
 import prioritize from './services/prioritize';
+
 const LatenciesTable = DataRepo.getLatencies();
 
 (async () => {
@@ -8,10 +9,10 @@ const LatenciesTable = DataRepo.getLatencies();
     const { totalMoney, usedTransaction } = prioritize(
       sampleTransactions,
       timeLimit,
-      LatenciesTable
+      LatenciesTable,
     );
     console.log(
-      `Max USD value that can be processed in "${timeLimit}ms" is ${totalMoney} | transactions count is : "${usedTransaction.length}"`
+      `Max USD value that can be processed in "${timeLimit}ms" is ${totalMoney} | transactions count is : "${usedTransaction.length}"`,
     );
   });
 })().catch((e) => {

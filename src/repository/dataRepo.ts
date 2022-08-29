@@ -1,15 +1,13 @@
 import path from 'path';
-
-const latencies = require('./latencies.json');
 import csv from 'csvtojson';
 import { Transaction, Latency } from '../types';
 
-//@todo maybe reading CSV as stream, line by line, by a generator *function
+const latencies = require('./latencies.json');
+
+// @todo maybe reading CSV as stream, line by line, by a generator *function
 
 export default {
-  getLatencies: (): Latency => {
-    return latencies;
-  },
+  getLatencies: (): Latency => latencies,
   getTransactions: async (): Promise<Transaction[]> => {
     try {
       return await csv({

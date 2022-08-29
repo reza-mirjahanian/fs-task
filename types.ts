@@ -1,6 +1,6 @@
 import Decimal from 'decimal.js';
 
-//CSV file transactions
+// CSV file transactions
 export type Transaction = {
   id: string; // a UUID of transaction
   amount: number; //  in USD, typically a value between 0.01 and 1000 USD.
